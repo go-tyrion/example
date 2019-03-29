@@ -1,0 +1,5 @@
+.idea
+
+pkg/
+dist/log/*
+dist/demo/bin/*
