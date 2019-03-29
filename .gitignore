@@ -1,5 +1,5 @@
 .idea
 
 pkg/
-dist/log/*
+dist/log/*.log
 dist/demo/bin/demo*
