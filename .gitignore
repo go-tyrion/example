@@ -2,4 +2,4 @@
 
 pkg/
 dist/log/*
-dist/demo/bin/*
+dist/demo/bin/demo*
