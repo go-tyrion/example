@@ -20,7 +20,8 @@ func runHttpServer() {
 	})
 
 	app.Get("/demo", func(ctx *http.Context) {
-		ctx.String(200, "Hello")
+		app.Log().Println("path: /demo, info: get demo")
+		ctx.String(200, "Hello my framework.")
 	})
 
 	if err := app.Run(); err != nil {
