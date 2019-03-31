@@ -20,7 +20,6 @@ func runHttpServer() {
 	})
 
 	app.Get("/demo", func(ctx *http.Context) {
-		app.Log().Println("path: /demo, info: get demo")
 		ctx.String(200, "Hello my framework.")
 	})
 
