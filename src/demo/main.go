@@ -24,7 +24,7 @@ func runHttpServer() {
 	})
 
 	app.Get("/test", func(ctx *http.Context) {
-		ctx.Json(200, map[string]string{
+		ctx.JSON(200, map[string]string{
 			"status": "0",
 			"msg":    "success",
 		})
