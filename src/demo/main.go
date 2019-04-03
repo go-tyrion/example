@@ -27,7 +27,8 @@ func runHttpServer() {
 		ctx.JSON(200, map[string]string{
 			"status": "0",
 			"msg":    "success",
-			"ctx":    ctx.Get("demo"),
+			"demo":   ctx.Get("demo"),
+			"foo":    ctx.Post("foo"),
 		})
 	})
 
