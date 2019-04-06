@@ -16,7 +16,8 @@ func runHttpServer() {
 	app := http.New()
 
 	app.Init(&http.Options{
-		Port: 3210,
+		Port:                3210,
+		IgnorePathLastSlash: true,
 	})
 
 	app.Get("/demo", func(ctx *http.Context) {
