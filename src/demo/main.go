@@ -20,6 +20,13 @@ func runHttpServer() {
 		IgnorePathLastSlash: true,
 	})
 
+	app.Get("/", func(c *http.Context) {
+		c.OkJSON(map[string]interface{}{
+			"status":  0,
+			"message": "success",
+		})
+	})
+
 	app.Get("/demo", func(ctx *http.Context) {
 		ctx.String(200, "Hello my framework.")
 	})
