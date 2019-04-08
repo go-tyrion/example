@@ -20,6 +20,8 @@ func runHttpServer() {
 		IgnorePathLastSlash: true,
 	})
 
+	app.AddLogic("/index", new(Index))
+
 	app.Get("/", func(c *http.Context) {
 		c.OkJSON(map[string]interface{}{
 			"status":  0,
