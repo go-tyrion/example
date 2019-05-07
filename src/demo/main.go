@@ -12,7 +12,12 @@ func init() {
 func main() {
 	runHttpServer()
 
-	redis.NewClient()
+	client := redis.NewClient(&redis.Options{
+		Addr: "",
+	})
+	client.Get("here")
+
+	redis.NewClusterClient(&redis.ClusterOptions{})
 
 }
 
