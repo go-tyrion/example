@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/go-redis/redis"
 	"lib/server/http"
 )
 
@@ -10,6 +11,9 @@ func init() {
 }
 func main() {
 	runHttpServer()
+
+	redis.NewClient()
+
 }
 
 func runHttpServer() {
