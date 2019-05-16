@@ -1,8 +1,9 @@
 package main
 
 import (
+	"demo/api"
 	"fmt"
-	"github.com/go-redis/redis"
+	"lib/error"
 	"lib/server/http"
 )
 
@@ -12,13 +13,26 @@ func init() {
 func main() {
 	runHttpServer()
 
-	client := redis.NewClient(&redis.Options{
-		Addr: "",
-	})
-	client.Get("here")
+	/*
+		client := redis.NewClient(&redis.Options{
+			Addr: "",
+		})
+		client.Get("here")
 
-	redis.NewClusterClient(&redis.ClusterOptions{})
+		redis.NewClusterClient(&redis.ClusterOptions{})
+	*/
 
+	e := err()
+	if e != nil {
+		fmt.Println("e:", e)
+	}
+}
+
+func err() *error.Error {
+	code := error.ErrorCode(1)
+
+	// return error.New("msg")
+	return error.NewWithCode(code, "message")
 }
 
 func runHttpServer() {
@@ -29,7 +43,7 @@ func runHttpServer() {
 		IgnorePathLastSlash: true,
 	})
 
-	app.AddLogic("/index", new(Index))
+	app.AddLogic("/index", new(api.Index))
 
 	app.Get("/", func(c *http.Context) {
 		c.OkJSON(map[string]interface{}{
