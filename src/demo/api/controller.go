@@ -11,10 +11,14 @@ func (this *Index) Init() {
 }
 
 func (this *Index) Index(ctx *http.Context) {
+	ctx.SetHeader("Content-Type", "application/json")
 	ctx.OkJSON(map[string]interface{}{
 		"status":  0,
 		"message": "success",
-		"place":   "index",
+		"data": map[string]interface{}{
+			"id":   1,
+			"name": "eden",
+		},
 	})
 }
 
