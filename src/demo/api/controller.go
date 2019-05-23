@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"lib/config"
 	"lib/server/http"
-	"lib/tpp/src/github.com/sirupsen/logrus"
 )
 
 type Index struct {
@@ -24,10 +23,8 @@ func (this *Index) Index(ctx *http.Context) {
 		"name":   "Tyrion",
 		"mobile": "13207182679",
 	}
-	data, _ := json.Marshal(msg)
 
-	logrus.SetFormatter(&logrus.JSONFormatter{})
-	logrus.Info(data)
+	json.Marshal(msg)
 
 	ctx.OkJSON(map[string]interface{}{
 		"status":  0,

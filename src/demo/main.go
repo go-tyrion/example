@@ -3,6 +3,7 @@ package main
 import (
 	"demo/api"
 	"fmt"
+	"lib/core/log"
 	"lib/error"
 	"lib/server/http"
 )
@@ -64,6 +65,8 @@ func runHttpServer() {
 			"foo":    ctx.Post("foo"),
 		})
 	})
+
+	log.SetLevel(log.Lerror)
 
 	if err := app.Run(); err != nil {
 		panic(err.Error())
