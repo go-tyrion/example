@@ -1,10 +1,10 @@
 package api
 
 import (
-	"demo/kafka"
 	"encoding/json"
 	"lib/config"
 	"lib/server/http"
+	"lib/tpp/src/github.com/sirupsen/logrus"
 )
 
 type Index struct {
@@ -26,12 +26,8 @@ func (this *Index) Index(ctx *http.Context) {
 	}
 	data, _ := json.Marshal(msg)
 
-	err := kafka.ProducerInstance.Product("test-topic", data)
-	if err != nil {
-		result = err.Error()
-	} else {
-		result = "ok"
-	}
+	logrus.SetFormatter(&logrus.JSONFormatter{})
+	logrus.Info(data)
 
 	ctx.OkJSON(map[string]interface{}{
 		"status":  0,
@@ -39,7 +35,7 @@ func (this *Index) Index(ctx *http.Context) {
 		"data": map[string]interface{}{
 			"id":      1,
 			"name":    "eden",
-			"brokers": config.Strings("brokers", "kafka.ini", ","),
+			"brokers": config.Strings("kafka.brokers", "kafka.ini", ","),
 		},
 	})
 }
