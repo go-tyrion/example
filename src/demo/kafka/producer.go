@@ -5,5 +5,5 @@ import "lib/driver/kafka"
 var ProducerInstance *kafka.Producer
 
 func init() {
-	ProducerInstance = kafka.NewKakfaProducer("kafka.ini")
+	ProducerInstance = kafka.NewKafkaProducer("kafka.ini")
 }
