@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"lib/config"
+	"lib/core/log"
 	"lib/server/http"
 )
 
@@ -25,6 +26,12 @@ func (this *Index) Index(ctx *http.Context) {
 	}
 
 	json.Marshal(msg)
+
+	log.ShowFile()
+	log.Info("controller")
+
+	logger := log.NewLogger()
+	logger.Info("log2")
 
 	ctx.OkJSON(map[string]interface{}{
 		"status":  0,

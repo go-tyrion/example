@@ -3,9 +3,9 @@ package main
 import (
 	"demo/api"
 	"fmt"
-	"lib/core/log"
 	"lib/error"
 	"lib/server/http"
+	"log"
 )
 
 func init() {
@@ -27,6 +27,8 @@ func main() {
 	if e != nil {
 		fmt.Println("e:", e)
 	}
+
+	log.Print()
 }
 
 func err() *error.Error {
@@ -65,8 +67,6 @@ func runHttpServer() {
 			"foo":    ctx.Post("foo"),
 		})
 	})
-
-	log.SetLevel(log.Lerror)
 
 	if err := app.Run(); err != nil {
 		panic(err.Error())
