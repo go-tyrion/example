@@ -2,7 +2,7 @@ package api
 
 import (
 	"encoding/json"
-	"lib/config"
+	"lib/core/config"
 	"lib/core/log"
 	"lib/server/http"
 )
