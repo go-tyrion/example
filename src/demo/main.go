@@ -39,7 +39,7 @@ func err() *error.Error {
 }
 
 func runHttpServer() {
-	app := http.New()
+	app := http.NewHttpServer()
 
 	app.Init(&http.Options{
 		Port:                3210,
