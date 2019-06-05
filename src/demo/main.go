@@ -3,7 +3,7 @@ package main
 import (
 	"demo/api"
 	"fmt"
-	"lib/core/error"
+	"lib/error"
 	"lib/server/http"
 	"log"
 )

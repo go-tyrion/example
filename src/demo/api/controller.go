@@ -2,8 +2,8 @@ package api
 
 import (
 	"encoding/json"
-	"lib/core/config"
-	"lib/core/log"
+	"lib/config"
+	"lib/log"
 	"lib/server/http"
 )
 
