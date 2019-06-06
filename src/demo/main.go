@@ -42,7 +42,7 @@ func runHttpServer() {
 	app := http.NewHttpServer()
 
 	app.Init(&http.Options{
-		Port:                3210,
+		Addr:                ":4321",
 		IgnorePathLastSlash: true,
 	})
 
