@@ -39,7 +39,7 @@ func err() *error.Error {
 }
 
 func runHttpServer() {
-	app := http.NewHttpServer()
+	app := http.NewHttpService()
 
 	app.Init(&http.Options{
 		Addr:                ":4321",
