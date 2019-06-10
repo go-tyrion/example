@@ -42,7 +42,6 @@ func runHttpServer() {
 	app := http.NewHttpService()
 
 	app.Init(&http.Options{
-		Addr:                ":4321",
 		IgnorePathLastSlash: true,
 	})
 
