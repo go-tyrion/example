@@ -41,10 +41,6 @@ func err() *error.Error {
 func runHttpServer() {
 	app := http.NewHttpService()
 
-	app.Init(&http.Options{
-		IgnorePathLastSlash: true,
-	})
-
 	app.AddLogic("/index", new(api.Index))
 
 	app.Get("/", func(c *http.Context) {
